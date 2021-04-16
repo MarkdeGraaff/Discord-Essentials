@@ -3,6 +3,7 @@ const {Collection, Client, Discord} = require('discord.js')
 const fs = require('fs')
 const { MessageAttachment } = require("discord.js")
 const Schema = require("./models/welcomeChannel");
+const MoneySchema = require("./schema")
 const Canvas = require("discord-canvas");
 const ReactionSchema = require("./models/reaction-roles")
 const path = require("path")
@@ -12,7 +13,8 @@ const client = new Client({
     partials: ["CHANNEL", "MESSAGE", "GUILD_MEMBER", "REACTION"],
 })
 const mongoose = require("mongoose")
-const config = require('./config.json')
+const config = require('./config.json');
+const schema = require('./schema');
 const prefix = config.prefix
 const token = config.token
 client.commands = new Collection();
@@ -150,6 +152,38 @@ client.on('message', async message =>{
     const splittedMsgs = message.content.split(" ");
 
 })
+
+client.bal = (id) => new Promise(async ful => {
+    const data = await schema.findOne({id});
+    if(!data) return ful(0);
+    ful(data.coins);
+})
+
+
+client.add = (id, coins) => {
+    Schema.findOne({id}, async(err, data) => {
+        if(err) throw err;
+        if (data) {
+            data.coins += coins;
+        } else {
+            data = new Schema({ id, coins })
+        }
+        data.save();
+    })
+}
+
+client.rmv = (id, coins) => {
+    Schema.findOne({id}, async(err, data) => {
+        if(err) throw err;
+        if (data) {
+            data.coins -= coins;
+        } else {
+            data = new Schema({ id, coins: -coins })
+        }
+        data.save();
+    })
+}
+
 client.login(token)
 
 mongoose.connect("mongodb+srv://root:o7c4DWZ9yTNnGAOv@cluster0.ejdy1.mongodb.net/test", {
