@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Essentials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <img src="https://i.imgur.com/vewFUGJ.png" data-speed="-5" class="layer">
+        <img src="https://i.imgur.com/Cj1EaVi.png" data-speed="5" class="layer">
+        <img src="https://i.imgur.com/CBURyLf.png" data-speed="2" class="layer">
+        <img src="https://i.imgur.com/s5DFzJC.png" data-speed="6" class="layer">
+        <img src="https://i.imgur.com/WHZnslb.png" data-speed="8" class="layer">
+        <img src="https://i.imgur.com/PNyNr53.png" data-speed="-5" class="layer">
+        <img src="https://i.imgur.com/W61GtVJ.png" data-speed="4" class="layer">
+        <img src="https://i.imgur.com/gmpw1Rp.png" data-speed="-9" class="layer">
+        <img src="https://i.imgur.com/mYGnxFf.png" data-speed="6" class="layer">
+        <img src="https://i.imgur.com/hfXDi41.png" data-speed="-7" class="layer">
+        <img src="https://i.imgur.com/u7p172c.png" data-speed="-5" class="layer">
+        <img src="https://i.imgur.com/nV9nBJW.png" data-speed="5" class="layer">
+        <h2 class="layer">Discord Essentials</h2>
+        <a href="https://discord.com/oauth2/authorize?client_id=826381123666968577&permissions=8&scope=bot" class="button alignbutton1 layer" target="_blank">Invite</a>
+        <a href="/commands" class="button alignbutton2 layer" >Commands</a>
+    </section>
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e){
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+
+                const x = (window.innerWidth - e.pageX*speed)/300
+                const y = (window.innerHeight - e.pageY*speed)/300
+
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+            })
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body
+        {
+            background: #111;
+        }
+        .alignbutton1 {
+            position: absolute;
+            margin-top: 10%;
+            margin-right: 8%;
+        }
+        .alignbutton2 {
+            position: absolute;
+            margin-top: 10%;
+            margin-left: 8%;
+        }
+        section
+        {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        section h2
+        {
+            position: relative;
+            color: #fff;
+            font-size: 5em;
+        }
+        .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    }
+    </style>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Essentials</title>
+</head>
+<body>
+    <h1 class="Poppinsfont leftalign">COMMANDS</h1>
+    <p class="Poppinsfont leftalign" style="color:rgb(95, 95, 95) !important; line-height: 70%;">
+        Find all the information regarding the whole list of commands </p>
+    <p class="Poppinsfont leftalign" style="color:rgb(95, 95, 95) !important; line-height: 70%;">
+        that you have with Discord Essentials. </p>
+    <p class="Poppinsfont leftalign" style="color:rgb(95, 95, 95) !important; line-height: 70%;">
+        You can also use <code>$help</code> in a server!
+    </p>
+    <h5 class="Poppinsfont leftalign" ><a href="/" style="text-decoration: none; color: white;">return</a></h5>
+    <section class="main-content">
+        
+        <% commands.forEach(({ name, value}) => { %>
+          <table style="width: 100%">
+            <h1 style="text-align: center;">
+                <h2 style="color: rgb(131, 131, 131); text-align: center;"><%= name %></h2>
+            </h1>
+            <tr>
+              <th>Command Name</th>
+              <th>Description</th>
+              <th>Usage</th>
+              <th>Aliases</th>
+            </tr>
+            <% value.forEach(({name, description, aliases, usage}) => { %>
+                <tr>
+                    <td>
+                        <%= name %> 
+                    </td>
+                    <td>
+                        <%= description %> 
+                    </td>
+                    <td>
+                        <%= usage %> 
+                    </td>
+                <td><%= String(aliases) %></td>
+            </tr>
+            <% }) %>
+          </table>
+          <% }) %>
+        </section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+    .Poppinsfont
+    {
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+
+    .leftalign
+    {
+        margin-left: 20%;
+    }
+
+    body
+    {
+        background: #111;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color:rgb(131, 131, 131);
+    }
+
+    .main-content {
+        word-wrap: break-word;
+    }
+
+    @media screen and (min-width: 64em){
+        .main-content {
+            max-width: 64rem;
+            padding: 2rem 6rem;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+    }
+
+    @media screen and (min-width: 42em) and (min-width: 64em){
+        .main-content {
+            padding: 2rem 4rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    @media screen and (min-width: 42em){
+        .main-content {
+            padding: 2rem 1rem;
+            font-size: 1rem;
+        }
+    }
+
+    .main-content h1,
+    .main-content h2,
+    .main-content h3,
+    .main-content h4,
+    .main-content h5,
+    .main-content h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: normal;
+        color:#111;
+    }
+
+    .main-content code {
+        padding: 2px 4px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    code {
+        color:rgb(170, 169, 169) !important;
+    }
+
+    .main-content table th, 
+    .main-content table td {
+        padding: 0.5rem 1rem;
+    } 
+</style>
+</body>
+</html>
