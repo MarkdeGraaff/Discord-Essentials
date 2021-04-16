@@ -1,5 +1,4 @@
-const { mongo } = require("mongoose");
-const mono = require("mongoose");
+const mongo = require("mongoose");
 
 module.exports = mongo.model(
     'Money',
