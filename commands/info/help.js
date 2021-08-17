@@ -47,7 +47,7 @@ module.exports = {
         .setTitle("📬 Need help? Here are all of my commands:")
         .addFields(categories)
         .setDescription(
-          `Use \`${prefix}help\` followed by a command name to get more additional information on a command. For example: \`${prefix}help ban\`. (Made by Murkyy)`
+          `Use \`${prefix}help\` followed by a command name to get more additional information on a command. For example: \`${prefix}help ban\`. (Made by Frosty)`
         )
         .setFooter(
           `Requested by ${message.author.tag}`,
